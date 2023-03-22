@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>인터넷 설정 자동화를 위한 DHCP</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>인터넷 설정 자동화를 위한 DHCP | meongj’s dev blog.</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="인터넷 설정 자동화를 위한 DHCP" />
+<meta name="author" content="meongj" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="인터넷 사용 전에 해야 할 설정 IP 주소 (Host 주소의 unique한 식별자) &lt;- ISP (ip주소들을 제공해주는 곳) Subnet Mask Gateway IP주소 DNS 주소 -&gt; 내가 설정들을 직접하는 것이 아니라 자동으로 해줕다 =&gt; DHCP Dynamic Host Configuration Protocol Dynamic = runtime “작동중” “동적” (ip주소 + GW + DNS …주소) 들을 설정 자동으로 해준다 서버와 할당 받으려는 클라이언트로 구성된다 복잡한 인터넷 설정을 자동으로 해준다 핵심은 내가 사용할 IP주소를 서버가 알려준다 어떤 컴퓨터에 전원이 딱 켜지면, Broadcast packet이 나간다. -&gt; dhcp 서버가 응답을 한다 -&gt; 한번 주소를 할당받으면 그 주소 계속 쓰려는 경향이 있다" />
+<meta property="og:description" content="인터넷 사용 전에 해야 할 설정 IP 주소 (Host 주소의 unique한 식별자) &lt;- ISP (ip주소들을 제공해주는 곳) Subnet Mask Gateway IP주소 DNS 주소 -&gt; 내가 설정들을 직접하는 것이 아니라 자동으로 해줕다 =&gt; DHCP Dynamic Host Configuration Protocol Dynamic = runtime “작동중” “동적” (ip주소 + GW + DNS …주소) 들을 설정 자동으로 해준다 서버와 할당 받으려는 클라이언트로 구성된다 복잡한 인터넷 설정을 자동으로 해준다 핵심은 내가 사용할 IP주소를 서버가 알려준다 어떤 컴퓨터에 전원이 딱 켜지면, Broadcast packet이 나간다. -&gt; dhcp 서버가 응답을 한다 -&gt; 한번 주소를 할당받으면 그 주소 계속 쓰려는 경향이 있다" />
+<link rel="canonical" href="http://localhost:4000/network/2023/03/23/DHCP.html" />
+<meta property="og:url" content="http://localhost:4000/network/2023/03/23/DHCP.html" />
+<meta property="og:site_name" content="meongj’s dev blog." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-23T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="인터넷 설정 자동화를 위한 DHCP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"meongj"},"dateModified":"2023-03-23T00:00:00+09:00","datePublished":"2023-03-23T00:00:00+09:00","description":"인터넷 사용 전에 해야 할 설정 IP 주소 (Host 주소의 unique한 식별자) &lt;- ISP (ip주소들을 제공해주는 곳) Subnet Mask Gateway IP주소 DNS 주소 -&gt; 내가 설정들을 직접하는 것이 아니라 자동으로 해줕다 =&gt; DHCP Dynamic Host Configuration Protocol Dynamic = runtime “작동중” “동적” (ip주소 + GW + DNS …주소) 들을 설정 자동으로 해준다 서버와 할당 받으려는 클라이언트로 구성된다 복잡한 인터넷 설정을 자동으로 해준다 핵심은 내가 사용할 IP주소를 서버가 알려준다 어떤 컴퓨터에 전원이 딱 켜지면, Broadcast packet이 나간다. -&gt; dhcp 서버가 응답을 한다 -&gt; 한번 주소를 할당받으면 그 주소 계속 쓰려는 경향이 있다","headline":"인터넷 설정 자동화를 위한 DHCP","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/network/2023/03/23/DHCP.html"},"url":"http://localhost:4000/network/2023/03/23/DHCP.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/assets/portfolio.png" alt="meongj." />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">meongj.</a>
+      </h2>
+      </div><p class="tagline">Backend Developer.</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/meongj" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/network/2023/03/23/DHCP.html">
+    <h2 class="post-title">인터넷 설정 자동화를 위한 DHCP</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Mar 23, 2023</div><ul class="post-categories"><li>Network</li></ul></div>
+  <div class="post">
+    <p>인터넷 사용 전에 해야 할 설정</p>
+<ul>
+  <li>IP 주소 (Host 주소의 unique한 식별자)  &lt;- ISP (ip주소들을 제공해주는 곳)</li>
+  <li>Subnet Mask</li>
+  <li>Gateway IP주소</li>
+  <li>DNS 주소</li>
+</ul>
+
+<p>-&gt; 내가 설정들을 직접하는 것이 아니라 자동으로 해줕다
+=&gt; DHCP</p>
+<ul>
+  <li>Dynamic Host Configuration Protocol
+    <ul>
+      <li>Dynamic = runtime “작동중” “동적”</li>
+    </ul>
+  </li>
+  <li>(ip주소 + GW + DNS …주소) 들을 설정 자동으로 해준다</li>
+  <li>서버와 할당 받으려는 클라이언트로 구성된다</li>
+  <li>복잡한 인터넷 설정을 자동으로 해준다</li>
+  <li>핵심은 내가 사용할 IP주소를 서버가 알려준다</li>
+</ul>
+
+<p>어떤 컴퓨터에 전원이 딱 켜지면, Broadcast packet이 나간다.
+-&gt; dhcp 서버가 응답을 한다 -&gt; 한번 주소를 할당받으면 그 주소 계속 쓰려는 경향이 있다</p>
+
+<ul>
+  <li>dhcp서버는 ip주소를 가진 pool을 가지고 있어서
+ip 주소가 겹치지 않도록 할당해준다.
+또한 , 같은 Broadcast 도메인 안에 있어야 한다.</li>
+</ul>
+
+<p>출처 : (인프런) 외워서 끝내는 네트워크 핵심이론 - 기초</p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/meongj" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

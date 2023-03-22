@@ -1,6 +1,18 @@
 [
   
     {
+      "title"    : "인터넷 설정 자동화를 위한 DHCP",
+      "title-lower"    : "인터넷 설정 자동화를 위한 dhcp",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Network",
+      "tags"     : "",
+      "url"      : "/network/2023/03/23/DHCP.html",
+      "date"     : "2023-03-23 00:00:00 +0900",
+      "content"     : "인터넷 사용 전에 해야 할 설정  IP 주소 (Host 주소의 unique한 식별자)  &amp;lt;- ISP (ip주소들을 제공해주는 곳)  Subnet Mask  Gateway IP주소  DNS 주소-&amp;gt; 내가 설정들을 직접하는 것이 아니라 자동으로 해줕다=&amp;gt; DHCP  Dynamic Host Configuration Pr..."
+    } ,
+  
+    {
       "title"    : "TTL과 단편화",
       "title-lower"    : "ttl과 단편화",
       "sub-titile" : "",

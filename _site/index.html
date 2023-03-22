@@ -72,7 +72,40 @@
         <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
       </div>
       
-    </li><li><a class="post-link" href="/network/2023/03/22/TTL%EA%B3%BC_%EB%8B%A8%ED%8E%B8%ED%99%94.html">
+    </li><li><a class="post-link" href="/network/2023/03/23/DHCP.html">
+          <h2 class="post-title">인터넷 설정 자동화를 위한 DHCP</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <i class="icon-calendar"></i>
+            Mar 23, 2023
+          </div><ul class="post-categories"><li>Network</li></ul></div>
+        <div class="post"><p>인터넷 사용 전에 해야 할 설정</p>
+<ul>
+  <li>IP 주소 (Host 주소의 unique한 식별자)  &lt;- ISP (ip주소들을 제공해주는 곳)</li>
+  <li>Subnet Mask</li>
+  <li>Gateway IP주소</li>
+  <li>DNS 주소</li>
+</ul>
+
+<p>-&gt; 내가 설정들을 직접하는 것이 아니라 자동으로 해줕다
+=&gt; DHCP</p>
+<ul>
+  <li>Dynamic Host Configuration Protocol
+    <ul>
+      <li>Dynamic = runtime “작동중” “동적”</li>
+    </ul>
+  </li>
+  <li>(ip주소 + GW + DNS …주소) 들을 설정 자동으로 해준다</li>
+  <li>서버와 할당 받으려는 클라이언트로 구성된다</li>
+  <li>복잡한 인터넷 설정을 자동으로 해준다</li>
+  <li>핵심은 내가 사용할 IP주소를 서버가 알려준다</li>
+</ul>
+
+<p>어떤 컴퓨터에 전원이 딱 켜지면, Broadcast packet이 나간다.
+-&gt; dhcp 서버가 응답을 한다 -&gt; 한번 주소를 할당받으면 그 주소 계속 쓰려는 경향이 있다</p>
+</div>
+      </li><li><a class="post-link" href="/network/2023/03/22/TTL%EA%B3%BC_%EB%8B%A8%ED%8E%B8%ED%99%94.html">
           <h2 class="post-title">TTL과 단편화</h2>
         </a>
         <div class="post-meta">
