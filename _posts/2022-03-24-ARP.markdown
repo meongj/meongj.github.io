@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "ARP"
+date:   2023-03-24
+categories: Network
+mainFont: NanumGothic
+---
+
+ARP 
+- Address Resoultion Protocol
+-> 여기서 address는 ip주소 + MAC 주소
+  - 주소는 host에 IP주소(L3)와 MAC주소(L2)는 쌍을 이룬다
+- ARP는 IP주소 -> MAC 주소를 알아내려 할때 사용됨
+
+-> 그럼 언제 MAC 주소가 필요할까 ???
+- 보통의 경우 PC를 부팅하면, Gateway의 MAC주소를 찾아내기 위해
+  ARP Request가 발생허며 이에 대응하는 Reply로 MAC주소를 알 수 있다.
+  
+-> 인터넷을 하기 위해선 반!드!시 Gateway의 MAC주소가 필요하다.
+
+  ex) 인터넷(L3)을 통한 네이버에 접속하기 위해 네이버 MAC주소가 필요하지 않는다!
+      - L3는 ip만 필요하다
+      - 인터넷을 접속하기 위해 GW MAC주소가 반드시 필요하다.
+     - pc에서 ARP Req를 보낸다(GW주소를 알아내기 위해.). GW가 주소를 사용하고 있어서 Reply를 보내면서 자신의 MAC주소를 알려준다.
+===> 목적지의 MAC주소는 네이버주소가 아닌 Gateway 주소가 찍힌다.!!!
+     (IP주소만 네이버주소이다.)
+  
+명령어 : arp -a
+
+출처 : (인프런) 외워서 끝내는 네트워크 핵심이론 - 기초
