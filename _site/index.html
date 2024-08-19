@@ -9,20 +9,18 @@
 <title>meongj's dev blog.</title>
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>meongj’s dev blog. | Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="meongj’s dev blog." />
 <meta name="author" content="meongj" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
 <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="meongj’s dev blog." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="meongj’s dev blog." />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"meongj"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"meongj’s dev blog.","name":"meongj’s dev blog.","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"meongj"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"meongj’s dev blog.","name":"meongj’s dev blog.","url":"/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -48,7 +46,7 @@
             <i class="icon-github-circled"></i>
           </li>
         </a></ul><p class="about-footer ">&copy;
-        2023</p><div class="about-footer ">
+        2024</p><div class="about-footer ">
         <p>Dark Mode
           <i class="icon-moon"></i>
           <label class="switch">
@@ -72,7 +70,46 @@
         <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
       </div>
       
-    </li><li><a class="post-link" href="/network/2023/03/23/DHCP.html">
+    </li><li><a class="post-link" href="/grpc/2024/08/19/gRpc-stream.html">
+          <h2 class="post-title">gRpc-stream</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <i class="icon-calendar"></i>
+            Aug 19, 2024
+          </div><ul class="post-categories"><li>gRpc</li></ul></div>
+        <div class="post"><h1 id="grpc-stream-정의">gRpc-stream 정의</h1>
+<ul>
+  <li>gRpc(Google Remote Procedure Call)서 제공하는 데이터 통신 방식 중 하나</li>
+  <li>클라이언트와 서버 간에 연속적이고 비동기적인 데이터 스트림 전송
+    <h3 id="비교">비교</h3>
+  </li>
+  <li>일반적인 gRpc : 요청과 응답이 한번씩 주고 받는 형식</li>
+  <li>gRPC Stream : 여러 번의 데이터 전송 가능, 스트림(연속적인 데이터 흐름)으로 처리</li>
+</ul>
+
+</div>
+      </li><li><a class="post-link" href="/network/2023/03/24/ARP.html">
+          <h2 class="post-title">ARP</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <i class="icon-calendar"></i>
+            Mar 24, 2023
+          </div><ul class="post-categories"><li>Network</li></ul></div>
+        <div class="post"><p>ARP</p>
+<ul>
+  <li>Address Resoultion Protocol
+-&gt; 여기서 address는 ip주소 + MAC 주소
+    <ul>
+      <li>주소는 host에 IP주소(L3)와 MAC주소(L2)는 쌍을 이룬다</li>
+    </ul>
+  </li>
+  <li>ARP는 IP주소 -&gt; MAC 주소를 알아내려 할때 사용됨</li>
+</ul>
+
+</div>
+      </li><li><a class="post-link" href="/network/2023/03/23/DHCP.html">
           <h2 class="post-title">인터넷 설정 자동화를 위한 DHCP</h2>
         </a>
         <div class="post-meta">
@@ -104,6 +141,7 @@
 
 <p>어떤 컴퓨터에 전원이 딱 켜지면, Broadcast packet이 나간다.
 -&gt; dhcp 서버가 응답을 한다 -&gt; 한번 주소를 할당받으면 그 주소 계속 쓰려는 경향이 있다</p>
+
 </div>
       </li><li><a class="post-link" href="/network/2023/03/22/TTL%EA%B3%BC_%EB%8B%A8%ED%8E%B8%ED%99%94.html">
           <h2 class="post-title">TTL과 단편화</h2>
@@ -114,6 +152,7 @@
             Mar 22, 2023
           </div><ul class="post-categories"><li>Network</li></ul></div>
         <div class="post"><p>인터넷은 라우터의 집합체라고 할 수 있는 논리 네트워크이다.</p>
+
 </div>
       </li></ul>
 
@@ -127,7 +166,7 @@
             <i class="icon-github-circled"></i>
           </li>
         </a></ul><p class="about-footer ">&copy;
-        2023</p><div class="about-footer ">
+        2024</p><div class="about-footer ">
         <p>Dark Mode
           <i class="icon-moon"></i>
           <label class="switch">

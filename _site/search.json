@@ -1,6 +1,30 @@
 [
   
     {
+      "title"    : "gRpc-stream",
+      "title-lower"    : "grpc-stream",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "gRpc",
+      "tags"     : "",
+      "url"      : "/grpc/2024/08/19/gRpc-stream.html",
+      "date"     : "2024-08-19 00:00:00 +0900",
+      "content"     : "gRpc-stream 정의  gRpc(Google Remote Procedure Call)서 제공하는 데이터 통신 방식 중 하나  클라이언트와 서버 간에 연속적이고 비동기적인 데이터 스트림 전송    비교    일반적인 gRpc : 요청과 응답이 한번씩 주고 받는 형식  gRPC Stream : 여러 번의 데이터 전송 가능, 스트림(연속적인 데이터 흐..."
+    } ,
+  
+    {
+      "title"    : "ARP",
+      "title-lower"    : "arp",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Network",
+      "tags"     : "",
+      "url"      : "/network/2023/03/24/ARP.html",
+      "date"     : "2023-03-24 00:00:00 +0900",
+      "content"     : "ARP  Address Resoultion Protocol-&amp;gt; 여기서 address는 ip주소 + MAC 주소          주소는 host에 IP주소(L3)와 MAC주소(L2)는 쌍을 이룬다        ARP는 IP주소 -&amp;gt; MAC 주소를 알아내려 할때 사용됨-&amp;gt; 그럼 언제 MAC 주소가 필요할까 ???  보..."
+    } ,
+  
+    {
       "title"    : "인터넷 설정 자동화를 위한 DHCP",
       "title-lower"    : "인터넷 설정 자동화를 위한 dhcp",
       "sub-titile" : "",
@@ -19,7 +43,7 @@
       "sub-titile-lower" : "",
       "categories" : "Network",
       "tags"     : "",
-      "url"      : "/network/2023/03/22/TTL%E1%84%80%E1%85%AA_%E1%84%83%E1%85%A1%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA.html",
+      "url"      : "/network/2023/03/22/TTL%EA%B3%BC_%EB%8B%A8%ED%8E%B8%ED%99%94.html",
       "date"     : "2023-03-22 00:00:00 +0900",
       "content"     : "인터넷은 라우터의 집합체라고 할 수 있는 논리 네트워크이다.Router VS L3 Switch -&amp;gt; 이 둘은 구분하기 모호하다.인터넷이란 [라우터 + DNS]의 집합체이다.TTL 은 Time To Live  세포의 텔로미어와 같은 더이상 무한 자가복제가 되지 않는다.          Packet은 목적지까지 도달하는데 실패하는 경우가 있다..."
     } 
