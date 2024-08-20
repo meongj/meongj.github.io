@@ -6,7 +6,7 @@
                 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
         <url>
             <loc></loc>
-	    <lastmod>2024-08-20T00:08:57+09:00</lastmod>
+	    <lastmod>2024-08-20T22:48:12+09:00</lastmod>
             <priority>1.00</priority>
         </url><url>
                 <loc>/grpc/2024/08/19/gRpc-stream.html</loc>
